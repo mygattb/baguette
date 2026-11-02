@@ -474,7 +474,9 @@
 
   // --- Affordance handler ---
   window.simAffordanceHandlers = window.simAffordanceHandlers || {};
-  window.simAffordanceHandlers['stream'] = (id, name) => startStream(id, name);
+  window.simAffordanceHandlers['stream'] = (id) => {
+    location.href = `/simulators/${encodeURIComponent(id)}`;
+  };
 
   console.log('[ASC Pro] sim-stream.js loaded (modular)');
 })();
